@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>For Mehreen · a little care package</title>
+<meta name="description" content="A small, quiet corner of the internet made for Mehreen to rest, breathe and feel cared for.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<style>
+:root{--paper:#f5eff4;--ink:#2e2a66;--soft:#5b5890;--butter:#fff1bf;--pink:#ffc9d4;--mint:#cdeedd;--lav:#d9d4f6;--sky:#d6e6fa;--wob:18px 6px 20px 8px / 8px 20px 6px 18px}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;color:var(--ink);background:var(--paper) radial-gradient(rgba(46,42,102,.06) 1px,transparent 1.3px) 0 0/7px 7px;font:400 1.08rem/1.7 'Nunito',system-ui,sans-serif}
+main{max-width:720px;margin:0 auto;padding:0 22px 90px}
+.hand{font-family:'Caveat','Bradley Hand','Segoe Script','Comic Sans MS',cursive;font-weight:700}
+h1,h2{font-family:'Caveat','Bradley Hand','Segoe Script','Comic Sans MS',cursive;font-weight:700;line-height:1;margin:0}
+h1{font-size:clamp(3.6rem,15vw,7rem);transform:rotate(-3deg);transform-origin:left}
+h2{font-size:clamp(2.2rem,7vw,3rem);transform:rotate(-1.5deg);transform-origin:left;margin-bottom:6px}
+p{margin:0 0 1em}
+section{margin-top:78px}
+.sub{color:var(--soft);margin-bottom:22px}
+.box{border:2.5px solid var(--ink);border-radius:var(--wob);padding:22px 24px;background:#fff}
+.hatch-y{background:var(--butter) repeating-linear-gradient(62deg,rgba(242,200,94,.4) 0 3px,transparent 3px 11px)}
+.hatch-p{background:var(--pink) repeating-linear-gradient(62deg,rgba(255,138,163,.35) 0 3px,transparent 3px 11px)}
+.hatch-m{background:var(--mint) repeating-linear-gradient(62deg,rgba(110,190,150,.35) 0 3px,transparent 3px 11px)}
+.hatch-l{background:var(--lav) repeating-linear-gradient(62deg,rgba(130,120,220,.3) 0 3px,transparent 3px 11px)}
+.btn{font:800 1rem 'Nunito',system-ui,sans-serif;color:var(--ink);background:var(--butter);border:2.5px solid var(--ink);border-radius:var(--wob);padding:10px 22px;cursor:pointer;box-shadow:3px 3px 0 var(--ink);transition:transform .12s,box-shadow .12s}
+.btn:hover{transform:translate(1px,1px);box-shadow:2px 2px 0 var(--ink)}
+.btn:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--ink)}
+:focus-visible{outline:3px dashed var(--ink);outline-offset:4px}
+a{color:var(--ink)}
+
+.hero{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding-top:54px}
+.hero svg{width:clamp(96px,22vw,150px);height:auto}
+.lead{font-size:1.2rem;max-width:34ch;margin-top:18px}
+.day2{display:block;width:100%;margin-top:34px;border:2.5px solid var(--ink);border-radius:var(--wob);background:#fff}
+
+.orb-wrap{text-align:center}
+.orb{width:170px;height:170px;margin:30px auto 18px;border-radius:50%;border:3px solid var(--ink);display:grid;place-items:center;transform:scale(1)}
+.orb span{font:700 1.7rem 'Caveat','Bradley Hand',cursive;padding:0 12px}
+.cue{min-height:1.8em;font-weight:600;margin-bottom:14px}
+
+.checks{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:10px}
+.checks label{display:flex;align-items:center;gap:14px;cursor:pointer;font-weight:600}
+.checks input{width:24px;height:24px;accent-color:var(--ink);flex:none}
+.checks input:checked+span{text-decoration:line-through;text-decoration-thickness:2px;opacity:.6}
+.tally{margin:18px 0 0;font-family:'Caveat','Bradley Hand',cursive;font-weight:700;font-size:1.6rem}
+
+.envs{display:grid;gap:14px}
+details{border:2.5px solid var(--ink);border-radius:var(--wob);background:#fff}
+details:nth-child(2n){transform:rotate(.5deg)}
+details:nth-child(2n+1){transform:rotate(-.5deg)}
+summary{cursor:pointer;list-style:none;padding:16px 22px;font:700 1.55rem 'Caveat','Bradley Hand',cursive;display:flex;justify-content:space-between;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"♡";flex:none}
+details[open] summary::after{content:"♥";color:#e5566d}
+details p{padding:0 22px;margin:0 0 20px}
+
+.letter{font:700 1.5rem/32px 'Caveat','Bradley Hand','Segoe Script',cursive;padding:18px 26px 14px;background:#fffdf8 repeating-linear-gradient(transparent 0 31px,rgba(46,42,102,.16) 31px 32px);transform:rotate(-.6deg)}
+.letter p{margin:0 0 32px}
+.sign{text-align:right}
+
+.days{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
+.day{width:60px;height:60px;border-radius:50%;border:2.5px solid var(--ink);background:#fff;color:var(--ink);font:700 1.5rem 'Caveat','Bradley Hand',cursive;cursor:pointer;transition:background .15s}
+.day[aria-pressed="true"]{background:var(--mint) repeating-linear-gradient(62deg,rgba(110,190,150,.45) 0 3px,transparent 3px 9px)}
+.day.today{box-shadow:0 0 0 4px var(--butter),0 0 0 6.5px var(--ink)}
+.dayline{margin-top:20px;min-height:1.7em;font-weight:600}
+
+footer{margin-top:90px;text-align:center}
+footer p{color:var(--soft);font-size:.95rem}
+@media (max-width:520px){.hero{grid-template-columns:1fr}.hero svg{order:-1}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}}
+</style>
+</head>
+<body>
+<main>
+
+<header class="hero">
+  <div>
+    <h1>Hi, Mehreen.</h1>
+    <p class="lead">This little corner of the internet is only for you. There’s nothing to do here except rest, and maybe smile once or twice.</p>
+    <a class="btn" href="#breathe" style="display:inline-block;text-decoration:none;margin-top:6px">Start with one slow breath</a>
+  </div>
+  <svg viewBox="0 0 150 150" role="img" aria-label="A hand-drawn sun">
+    <circle cx="75" cy="75" r="30" fill="#f6c97e" stroke="#2e2a66" stroke-width="3"/>
+    <path d="M62 68l14-7M65 80l18-8M72 90l12-5" stroke="#e8a94f" stroke-width="2.4" stroke-linecap="round" fill="none"/>
+    <path d="M75 22v-12M112 36l9-9M128 75h14M112 114l9 9M75 128v12M38 114l-9 9M22 75H8M38 36l-9-9" stroke="#2e2a66" stroke-width="3.2" stroke-linecap="round" fill="none"/>
+  </svg>
+</header>
+<!-- Save your drawing as day2.png next to this file and it shows up here. If the file is missing, this picture just hides. -->
+<img class="day2" src="day2.png" alt="A hand-drawn picture of Mehreen resting with a warm mug, a cooling patch and a sleepy white cat" onerror="this.remove()">
+
+<section id="breathe">
+  <h2>Breathe for a minute</h2>
+  <p class="sub">Follow the circle. In through your nose, a little hold, then out slowly.</p>
+  <div class="box hatch-l orb-wrap">
+    <div class="orb hatch-p" id="orb"><span id="orbText">ready</span></div>
+    <p class="cue" id="cue" aria-live="polite">Tap start when you’re comfy.</p>
+    <button class="btn" id="breathBtn" type="button">Start breathing</button>
+  </div>
+</section>
+
+<section>
+  <h2>Today’s tiny to-do list</h2>
+  <p class="sub">Just these. Tick them off whenever you feel like it.</p>
+  <div class="box hatch-y">
+    <ul class="checks" id="checks">
+      <li><label><input type="checkbox"><span>Drink some water, slowly</span></label></li>
+      <li><label><input type="checkbox"><span>Eat something soft and warm</span></label></li>
+      <li><label><input type="checkbox"><span>Wrap up in the cosiest blanket</span></label></li>
+      <li><label><input type="checkbox"><span>Rest your eyes, no guilt allowed</span></label></li>
+      <li><label><input type="checkbox"><span>Take your medicine if you’ve been told to</span></label></li>
+    </ul>
+    <p class="tally" id="tally">0 of 5. Take your time.</p>
+  </div>
+</section>
+
+<section>
+  <h2>Open when…</h2>
+  <p class="sub">Little notes, saved for the moments you might need them.</p>
+  <div class="envs">
+    <!-- EDIT: change any of these notes to your own words -->
+    <details><summary>…you’re tired of resting</summary><p>Resting is a real job, and you’re doing it well. Everything else can wait for you, I promise. Nothing falls apart while you get better.</p></details>
+    <details><summary>…you’re bored</summary><p>Pick a comfort show, get the softest blanket, and tell me what you’re watching. I’ll watch it with you from wherever I am.</p></details>
+    <details><summary>…you’re feeling low</summary><p>Feeling rough is part of being unwell, and it doesn’t last. I’m a message away at any hour, even if all you send is a heart.</p></details>
+    <details><summary>…you’re feeling a bit better</summary><p>I knew it. Keep it slow, keep sipping water, and keep smiling. There’s no race, and I’m proud of you.</p></details>
+  </div>
+</section>
+
+<section>
+  <h2>A note from me</h2>
+  <p class="sub">Written just for you.</p>
+  <!-- EDIT: write your own words here -->
+  <div class="box letter">
+    <p>Dear Mehreen Rahabbat Epshita Helaly,</p>
+    <p>I hate that you’re not feeling well. You’re one of the best people I know, and I wish I could sit beside you right now with tea and your favourite snacks.</p>
+    <p>Get all the rest you need. I’m here, I’m thinking of you, and the first thing we’ll do when you’re better is something fun.</p>
+    <p class="sign">Always yours,<br>your best friend ♥</p>
+  </div>
+</section>
+
+<section>
+  <h2>Getting better, day by day</h2>
+  <p class="sub">Tap a day once you’ve made it through. Today gets a ring.</p>
+  <div class="box hatch-m">
+    <div class="days" id="days">
+      <button class="day" type="button" aria-pressed="false" data-day="1" aria-label="Day 1">1</button>
+      <button class="day today" type="button" aria-pressed="false" data-day="2" aria-label="Day 2, today">2</button>
+      <button class="day" type="button" aria-pressed="false" data-day="3" aria-label="Day 3">3</button>
+      <button class="day" type="button" aria-pressed="false" data-day="4" aria-label="Day 4">4</button>
+      <button class="day" type="button" aria-pressed="false" data-day="5" aria-label="Day 5">5</button>
+      <button class="day" type="button" aria-pressed="false" data-day="6" aria-label="Day 6">6</button>
+      <button class="day" type="button" aria-pressed="false" data-day="7" aria-label="Day 7">7</button>
+    </div>
+    <p class="dayline hand" style="font-size:1.6rem" id="dayline"></p>
+  </div>
+</section>
+
+<footer>
+  <svg width="120" height="30" viewBox="0 0 120 30" aria-hidden="true"><path d="M4 18C30 6 60 26 116 10" stroke="#2e2a66" stroke-width="3" fill="none" stroke-linecap="round"/></svg>
+  <h2 style="transform:none;margin-top:6px">Rest first. Everything else can wait.</h2>
+  <p style="margin-top:14px">Made with love for Mehreen. If you start to feel worse, please tell someone and see a doctor.</p>
+</footer>
+
+</main>
+<script>
+(function(){
+  function load(k,d){try{var v=JSON.parse(localStorage.getItem(k));return v==null?d:v}catch(e){return d}}
+  function save(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}
+  var still=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  // Breathing
+  var orb=document.getElementById('orb'),orbText=document.getElementById('orbText'),cue=document.getElementById('cue'),btn=document.getElementById('breathBtn');
+  var phases=[['breathe in',4,1.35],['hold',2,1.35],['breathe out',6,1]],timer=null,running=false,i=0;
+  function step(){
+    var p=phases[i%phases.length];
+    orbText.textContent=p[0];cue.textContent=p[0].charAt(0).toUpperCase()+p[0].slice(1)+'… '+p[1]+' seconds';
+    if(!still){orb.style.transition='transform '+p[1]+'s ease-in-out';orb.style.transform='scale('+p[2]+')'}
+    i++;timer=setTimeout(step,p[1]*1000);
+  }
+  btn.addEventListener('click',function(){
+    if(running){running=false;clearTimeout(timer);orb.style.transform='scale(1)';orbText.textContent='ready';cue.textContent='Lovely. Come back any time.';btn.textContent='Start breathing';}
+    else{running=true;i=0;btn.textContent='Stop';step();}
+  });
+
+  // Checklist
+  var boxes=[].slice.call(document.querySelectorAll('#checks input')),tally=document.getElementById('tally');
+  var saved=load('mehreen-checks',[]);
+  var msgs=['Take your time.','A good start.','Nice, keep going gently.','Almost there, you star.','So close, well done.','All done. You looked after yourself today ♥'];
+  function count(){var n=boxes.filter(function(b){return b.checked}).length;tally.textContent=n+' of '+boxes.length+'. '+msgs[n];}
+  boxes.forEach(function(b,k){b.checked=!!saved[k];b.addEventListener('change',function(){save('mehreen-checks',boxes.map(function(x){return x.checked}));count()})});
+  count();
+
+  // Days
+  var days=[].slice.call(document.querySelectorAll('.day')),line=document.getElementById('dayline');
+  var done=load('mehreen-days',[]);
+  var dmsg=['Tap a day when you’ve made it through.','One day down. You’re doing it.','Two days down, getting stronger.','Three days. Look at you go.','Four days of being brave.','Five days. Almost at the finish.','Six days. Nearly there.','A whole week. So proud of you ♥'];
+  function paint(){days.forEach(function(d){d.setAttribute('aria-pressed',done.indexOf(d.dataset.day)>-1)});line.textContent=dmsg[done.length];}
+  days.forEach(function(d){d.addEventListener('click',function(){var v=d.dataset.day,at=done.indexOf(v);if(at>-1)done.splice(at,1);else done.push(v);save('mehreen-days',done);paint()})});
+  paint();
+})();
+</script>
+</body>
+</html>
