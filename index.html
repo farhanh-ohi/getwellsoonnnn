@@ -206,7 +206,7 @@ footer p{color:var(--soft);font-size:.95rem}
   var done=load('mehreen-days',['1','2']);
 
   // Hidden heart
-  var tiny=document.getElementById('tiny'),secret=document.getElementById('secret'),words='I love you a lot ♥';
+  var tiny=document.getElementById('tiny'),secret=document.getElementById('secret'),words='I will keep caring for you no matter what you say ♥';
   if(load('mehreen-found',false)){secret.textContent=words}
   tiny.addEventListener('click',function(){secret.textContent=words;secret.classList.remove('show');void secret.offsetWidth;secret.classList.add('show');save('mehreen-found',true)});
   var dmsg=['Tap a day when you’ve made it through.','One day down. You’re doing it.','Two days down, getting stronger.','Three days. Look at you go.','Four days of being brave.','Five days. Almost at the finish.','Six days. Nearly there.','A whole week. So proud of you ♥'];
