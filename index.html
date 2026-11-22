@@ -113,10 +113,10 @@ footer p{color:var(--soft);font-size:.95rem}
   <p class="sub">Just these. Tick them off whenever you feel like it.</p>
   <div class="box hatch-y">
     <ul class="checks" id="checks">
-      <li><label><input type="checkbox"><span>Drink a full glass of water, a few sips at a time</span></label></li>
-      <li><label><input type="checkbox"><span>Listen to one song you love with your eyes closed</span></label></li>
-      <li><label><input type="checkbox"><span>Do a gentle stretch, only if it feels okay</span></label></li>
-      <li><label><input type="checkbox"><span>Write down one thing you’re looking forward to</span></label></li>
+      <li><label><input type="checkbox"><span>Keep a water bottle within arm’s reach and sip from it</span></label></li>
+      <li><label><input type="checkbox"><span>Change into something clean and soft to wear</span></label></li>
+      <li><label><input type="checkbox"><span>Doodle or write anything in a notebook, no rules</span></label></li>
+      <li><label><input type="checkbox"><span>Message someone who makes you feel safe, only if you want to</span></label></li>
       <li><label><input type="checkbox"><span>Take your medicine on time if you’ve been told to</span></label></li>
     </ul>
     <p class="tally" id="tally">0 of 5. Take your time.</p>
@@ -128,22 +128,24 @@ footer p{color:var(--soft);font-size:.95rem}
   <p class="sub">Little notes, saved for the moments you might need them.</p>
   <div class="envs">
     <!-- EDIT: change any of these notes to your own words -->
-    <details><summary>…you can’t sleep</summary><p>Close your eyes and breathe like the circle at the top of this page. Even if sleep doesn’t come, lying still and quiet still counts as rest.</p></details>
-    <details><summary>…you’re overthinking</summary><p>Nothing needs solving tonight. Put it all on a shelf for now, and when you’re better we’ll take it down and sort it out together.</p></details>
-    <details><summary>…you need a laugh</summary><p>Think of the silliest moment we’ve ever had together. I’m grinning just thinking about it. Send me your favourite one and I’ll send you mine.</p></details>
-    <details><summary>…you need reminding</summary><p>You are loved, and not only on your best days. Being unwell doesn’t make you a burden. It makes you someone worth taking care of.</p></details>
+    <details><summary>…you feel lonely</summary><p>You’re not as alone as it feels right now. Someone is thinking about you at this very moment, and this page is proof of it.</p></details>
+    <details><summary>…you’re tired of being strong</summary><p>You don’t have to be strong every single minute. It’s okay to lie down, cry a little, or do absolutely nothing. Soft days are allowed.</p></details>
+    <details><summary>…you want to smile</summary><p>Think of the last time you laughed so hard your stomach hurt. That version of you is still in there, and she’s coming back soon.</p></details>
+    <details><summary>…you feel better and want to rush</summary><p>Slow down a little. Feeling better doesn’t always mean you’re fully well yet, so go gently for a few more days. The world can wait for you.</p></details>
   </div>
 </section>
 
 <section>
   <h2>A note from me</h2>
-  <p class="sub">Written just for you.</p>
+  <p class="sub">Written just for you, on day 4.</p>
   <!-- EDIT: write your own words here -->
   <div class="box letter">
-    <p>Dear Mehreen Rahabbat Epshita Helaly,</p>
-    <p>It’s day three now, and I know you’re tired of feeling this way. You’ve been so brave, and I’m proud of you for getting through every hard hour.</p>
-    <p>I can’t fix it for you, so I made you this little corner of the internet instead. Rest, drink your water, and let people look after you. I’m right here.</p>
-    <p class="sign">Only yours ♥</p>
+    <p>Dear love,</p>
+    <p>Hoping that you got better today, today is the 4th day. Take rest properly and stay hydrated, don’t do any excessive or heavy works on your own these days. Be careful for a few days.</p>
+    <p>I don’t know if you’ll ever forgive me or talk to me after what I said today, but I will keep this page alive with the love for you I have. I will keep updating this, let you know about me and hoping for the best for you. You need to know that, I love you, I care for you and I hope the best for you. I don’t want your smile to fade away like mine. Keep smiling and laughing always, only that’ll give me peace wherever I am.</p>
+    <p>I will love you more everyday and every moment. Know that too, I failed, to keep you, to value you, to care for you at time. I want to cleanse my mistakes idk if it’s possible or not. Take rest ma’am, I’ll be always here at your lowest.</p>
+    <p>And I’ll update this website for you everyday with some new activities and letters, you can read it whenever you feel low. I remember once you asked if I write diary or not, I think I’ll say this one is my diary, open to you. Take care.</p>
+    <p class="sign">Hasin</p>
     <p class="ps">P.S. One of the hearts on this page is hiding something. Can you find it?</p>
   </div>
 </section>
@@ -155,8 +157,8 @@ footer p{color:var(--soft);font-size:.95rem}
     <div class="days" id="days">
       <button class="day" type="button" aria-pressed="false" data-day="1" aria-label="Day 1">1</button>
       <button class="day" type="button" aria-pressed="false" data-day="2" aria-label="Day 2">2</button>
-      <button class="day today" type="button" aria-pressed="false" data-day="3" aria-label="Day 3, today">3</button>
-      <button class="day" type="button" aria-pressed="false" data-day="4" aria-label="Day 4">4</button>
+      <button class="day" type="button" aria-pressed="false" data-day="3" aria-label="Day 3">3</button>
+      <button class="day today" type="button" aria-pressed="false" data-day="4" aria-label="Day 4, today">4</button>
       <button class="day" type="button" aria-pressed="false" data-day="5" aria-label="Day 5">5</button>
       <button class="day" type="button" aria-pressed="false" data-day="6" aria-label="Day 6">6</button>
       <button class="day" type="button" aria-pressed="false" data-day="7" aria-label="Day 7">7</button>
@@ -195,18 +197,18 @@ footer p{color:var(--soft);font-size:.95rem}
 
   // Checklist
   var boxes=[].slice.call(document.querySelectorAll('#checks input')),tally=document.getElementById('tally');
-  var saved=load('mehreen-checks-day3',[]);
+  var saved=load('mehreen-checks-day4b',[]);
   var msgs=['Take your time.','A good start.','Nice, keep going gently.','Almost there, you star.','So close, well done.','All done. You looked after yourself today ♥'];
   function count(){var n=boxes.filter(function(b){return b.checked}).length;tally.textContent=n+' of '+boxes.length+'. '+msgs[n];}
-  boxes.forEach(function(b,k){b.checked=!!saved[k];b.addEventListener('change',function(){save('mehreen-checks-day3',boxes.map(function(x){return x.checked}));count()})});
+  boxes.forEach(function(b,k){b.checked=!!saved[k];b.addEventListener('change',function(){save('mehreen-checks-day4b',boxes.map(function(x){return x.checked}));count()})});
   count();
 
   // Days
   var days=[].slice.call(document.querySelectorAll('.day')),line=document.getElementById('dayline');
-  var done=load('mehreen-days',['1','2']);
+  var done=load('mehreen-days',['1','2','3']);
 
   // Hidden heart
-  var tiny=document.getElementById('tiny'),secret=document.getElementById('secret'),words='I will keep caring for you no matter what you say ♥';
+  var tiny=document.getElementById('tiny'),secret=document.getElementById('secret'),words='I love you a lot ♥';
   if(load('mehreen-found',false)){secret.textContent=words}
   tiny.addEventListener('click',function(){secret.textContent=words;secret.classList.remove('show');void secret.offsetWidth;secret.classList.add('show');save('mehreen-found',true)});
   var dmsg=['Tap a day when you’ve made it through.','One day down. You’re doing it.','Two days down, getting stronger.','Three days. Look at you go.','Four days of being brave.','Five days. Almost at the finish.','Six days. Nearly there.','A whole week. So proud of you ♥'];
