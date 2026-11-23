@@ -3,97 +3,98 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#cdbff0">
 <title>For Mehreen · a little care package</title>
 <meta name="description" content="A small, quiet corner of the internet made for Mehreen to rest, breathe and feel cared for.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Nunito:wght@400;600;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Dancing+Script:wght@600;700&family=Quicksand:wght@400;600;700&display=swap" rel="stylesheet">
 <style>
-:root{--paper:#f5eff4;--ink:#2e2a66;--soft:#5b5890;--butter:#fff1bf;--pink:#ffc9d4;--mint:#cdeedd;--lav:#d9d4f6;--sky:#d6e6fa;--wob:18px 6px 20px 8px / 8px 20px 6px 18px}
+:root{--ink:#3b2f5e;--soft:#6f6390;--accent:#e8657a;--gold:#ffcf6e;--card:rgba(255,255,255,.74);--script:'Dancing Script','Brush Script MT','Segoe Script',cursive;--hand:'Caveat','Bradley Hand','Segoe Script',cursive}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;color:var(--ink);background:var(--paper) radial-gradient(rgba(46,42,102,.06) 1px,transparent 1.3px) 0 0/7px 7px;font:400 1.08rem/1.7 'Nunito',system-ui,sans-serif}
-main{max-width:720px;margin:0 auto;padding:0 22px 90px}
-.hand{font-family:'Caveat','Bradley Hand','Segoe Script','Comic Sans MS',cursive;font-weight:700}
-h1,h2{font-family:'Caveat','Bradley Hand','Segoe Script','Comic Sans MS',cursive;font-weight:700;line-height:1;margin:0}
-h1{font-size:clamp(3.6rem,15vw,7rem);transform:rotate(-3deg);transform-origin:left}
-h2{font-size:clamp(2.2rem,7vw,3rem);transform:rotate(-1.5deg);transform-origin:left;margin-bottom:6px}
+body{margin:0;color:var(--ink);background:linear-gradient(180deg,#cdbff0 0%,#f7c6d9 34%,#ffd8c2 68%,#fff0dc 100%) fixed;font:400 1.06rem/1.7 'Quicksand',system-ui,sans-serif}
+main{max-width:720px;margin:0 auto;padding:0 20px 90px}
+h1,h2{font-family:var(--script);font-weight:700;line-height:1.05;margin:0}
+h1{font-size:clamp(3.3rem,13vw,5.8rem)}
+h2{font-size:clamp(2rem,6.5vw,2.6rem);margin-bottom:4px}
+h2::after{content:"";display:block;width:64px;height:4px;border-radius:4px;margin-top:8px;background:linear-gradient(90deg,var(--accent),var(--gold))}
 p{margin:0 0 1em}
-section{margin-top:78px}
-.sub{color:var(--soft);margin-bottom:22px}
-.box{border:2.5px solid var(--ink);border-radius:var(--wob);padding:22px 24px;background:#fff}
-.hatch-y{background:var(--butter) repeating-linear-gradient(62deg,rgba(242,200,94,.4) 0 3px,transparent 3px 11px)}
-.hatch-p{background:var(--pink) repeating-linear-gradient(62deg,rgba(255,138,163,.35) 0 3px,transparent 3px 11px)}
-.hatch-m{background:var(--mint) repeating-linear-gradient(62deg,rgba(110,190,150,.35) 0 3px,transparent 3px 11px)}
-.hatch-l{background:var(--lav) repeating-linear-gradient(62deg,rgba(130,120,220,.3) 0 3px,transparent 3px 11px)}
-.btn{font:800 1rem 'Nunito',system-ui,sans-serif;color:var(--ink);background:var(--butter);border:2.5px solid var(--ink);border-radius:var(--wob);padding:10px 22px;cursor:pointer;box-shadow:3px 3px 0 var(--ink);transition:transform .12s,box-shadow .12s}
-.btn:hover{transform:translate(1px,1px);box-shadow:2px 2px 0 var(--ink)}
-.btn:active{transform:translate(3px,3px);box-shadow:0 0 0 var(--ink)}
-:focus-visible{outline:3px dashed var(--ink);outline-offset:4px}
-a{color:var(--ink)}
+section{margin-top:72px}
+.sub{color:var(--soft);margin:12px 0 20px}
+.card{background:var(--card);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.85);border-radius:28px;padding:24px;box-shadow:0 12px 32px rgba(120,80,150,.16)}
+.btn{font:700 1rem 'Quicksand',system-ui,sans-serif;color:#fff;background:linear-gradient(135deg,#ef7d8f,#e8657a);border:0;border-radius:999px;padding:12px 26px;cursor:pointer;box-shadow:0 8px 18px rgba(232,101,122,.35);transition:transform .15s,box-shadow .15s;display:inline-block;text-decoration:none}
+.btn:hover{transform:translateY(-2px);box-shadow:0 12px 22px rgba(232,101,122,.4)}
+:focus-visible{outline:3px solid var(--ink);outline-offset:4px}
 
-.hero{display:grid;grid-template-columns:1fr auto;gap:12px;align-items:center;padding-top:54px}
-.hero svg{width:clamp(96px,22vw,150px);height:auto}
-.lead{font-size:1.2rem;max-width:34ch;margin-top:18px}
-.day2{display:block;width:100%;margin-top:34px;border:2.5px solid var(--ink);border-radius:var(--wob);background:#fff}
+.scene{display:block;width:100%;height:auto;margin-top:18px;overflow:visible}
+#sun{animation:rise 2.8s ease-out both}
+@keyframes rise{from{transform:translateY(80px)}to{transform:none}}
+.lead{font-size:1.15rem;max-width:36ch;margin:14px 0 20px}
+.day2{display:block;width:100%;margin-top:34px;border-radius:24px;box-shadow:0 12px 32px rgba(120,80,150,.2);background:#fff}
 
 .orb-wrap{text-align:center}
-.orb{width:170px;height:170px;margin:30px auto 18px;border-radius:50%;border:3px solid var(--ink);display:grid;place-items:center;transform:scale(1)}
-.orb span{font:700 1.7rem 'Caveat','Bradley Hand',cursive;padding:0 12px}
+.orb{width:170px;height:170px;margin:26px auto 18px;border-radius:50%;display:grid;place-items:center;background:radial-gradient(circle at 35% 30%,#fff,#ffc2d4 55%,#e9a4c8);box-shadow:0 0 0 12px rgba(255,194,212,.35),0 0 50px rgba(232,101,122,.35)}
+.orb span{font:700 1.9rem var(--script);padding:0 12px}
 .cue{min-height:1.8em;font-weight:600;margin-bottom:14px}
 
-.checks{list-style:none;margin:16px 0 0;padding:0;display:grid;gap:10px}
+.checks{list-style:none;margin:0;padding:0;display:grid;gap:14px}
 .checks label{display:flex;align-items:center;gap:14px;cursor:pointer;font-weight:600}
-.checks input{width:24px;height:24px;accent-color:var(--ink);flex:none}
-.checks input:checked+span{text-decoration:line-through;text-decoration-thickness:2px;opacity:.6}
-.tally{margin:18px 0 0;font-family:'Caveat','Bradley Hand',cursive;font-weight:700;font-size:1.6rem}
+.checks input{appearance:none;-webkit-appearance:none;width:27px;height:27px;border-radius:50%;border:2.5px solid var(--accent);background:#fff;flex:none;display:grid;place-items:center;cursor:pointer;margin:0}
+.checks input:checked{background:var(--accent)}
+.checks input:checked::after{content:"✓";color:#fff;font-weight:700;font-size:15px;line-height:1}
+.checks input:checked+span{opacity:.55;text-decoration:line-through}
+.tally{margin:20px 0 0;font:700 1.7rem var(--script)}
 
 .envs{display:grid;gap:14px}
-details{border:2.5px solid var(--ink);border-radius:var(--wob);background:#fff}
-details:nth-child(2n){transform:rotate(.5deg)}
-details:nth-child(2n+1){transform:rotate(-.5deg)}
-summary{cursor:pointer;list-style:none;padding:16px 22px;font:700 1.55rem 'Caveat','Bradley Hand',cursive;display:flex;justify-content:space-between;gap:12px}
+details{background:var(--card);border:1px solid rgba(255,255,255,.85);border-radius:22px;box-shadow:0 8px 22px rgba(120,80,150,.13)}
+summary{cursor:pointer;list-style:none;padding:16px 22px;font:700 1.5rem var(--script);display:flex;justify-content:space-between;gap:12px}
 summary::-webkit-details-marker{display:none}
-summary::after{content:"♡";flex:none}
-details[open] summary::after{content:"♥";color:#e5566d}
+summary::after{content:"♡";flex:none;color:var(--accent)}
+details[open] summary::after{content:"♥"}
 details p{padding:0 22px;margin:0 0 20px}
 
-.letter{font:700 1.5rem/32px 'Caveat','Bradley Hand','Segoe Script',cursive;padding:18px 26px 14px;background:#fffdf8 repeating-linear-gradient(transparent 0 31px,rgba(46,42,102,.16) 31px 32px);transform:rotate(-.6deg)}
-.letter p{margin:0 0 32px}
-.sign{text-align:right}
-.letter .ps{font-size:1.25rem;margin:0 0 14px;color:var(--soft)}
-.tiny{font-size:.95rem;line-height:1;background:none;border:0;color:#e5566d;opacity:.45;cursor:pointer;padding:8px;vertical-align:middle;transition:opacity .2s,transform .2s}
-.tiny:hover,.tiny:focus-visible{opacity:1;transform:scale(1.4)}
-.secret{font-family:'Caveat','Bradley Hand','Segoe Script',cursive;font-weight:700;font-size:clamp(2.4rem,10vw,3.6rem);line-height:1.1;color:#e5566d;margin:10px 0 0;transform:rotate(-2deg)}
-.secret.show{animation:pop .5s ease-out}
-@keyframes pop{from{transform:scale(.6) rotate(-2deg);opacity:0}to{transform:scale(1) rotate(-2deg);opacity:1}}
+.paper{background:#fffaf2;border-radius:24px;padding:30px 28px 22px;box-shadow:0 14px 34px rgba(120,80,150,.2);font:500 1.45rem/1.5 var(--hand)}
+.paper p{margin:0 0 20px}
+.paper .sign{text-align:right;font:700 1.9rem var(--script);margin-bottom:12px}
+.paper .ps{font-size:1.2rem;color:var(--soft)}
 
-.days{display:flex;flex-wrap:wrap;gap:12px;margin-top:20px}
-.day{width:60px;height:60px;border-radius:50%;border:2.5px solid var(--ink);background:#fff;color:var(--ink);font:700 1.5rem 'Caveat','Bradley Hand',cursive;cursor:pointer;transition:background .15s}
-.day[aria-pressed="true"]{background:var(--mint) repeating-linear-gradient(62deg,rgba(110,190,150,.45) 0 3px,transparent 3px 9px)}
-.day.today{box-shadow:0 0 0 4px var(--butter),0 0 0 6.5px var(--ink)}
-.dayline{margin-top:20px;min-height:1.7em;font-weight:600}
+.days{display:flex;flex-wrap:wrap;gap:12px}
+.day{width:58px;height:58px;border-radius:50%;border:2px solid rgba(232,101,122,.55);background:#fff;color:var(--ink);font:700 1.5rem var(--script);cursor:pointer;transition:background .2s,transform .15s}
+.day:hover{transform:scale(1.06)}
+.day[aria-pressed="true"]{background:linear-gradient(135deg,#ffe29a,var(--gold));border-color:#f0b84c}
+.day.today{box-shadow:0 0 0 4px #fff,0 0 0 6.5px var(--accent)}
+.dayline{margin:20px 0 0;font:700 1.7rem var(--script);min-height:1.6em}
 
 footer{margin-top:90px;text-align:center}
-footer p{color:var(--soft);font-size:.95rem}
-@media (max-width:520px){.hero{grid-template-columns:1fr}.hero svg{order:-1}}
-@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}.secret.show{animation:none}}
+footer h2{margin:6px auto 0}
+footer h2::after{margin:8px auto 0}
+footer p{color:var(--soft);font-size:.95rem;margin-top:14px}
+.tiny{font-size:.95rem;line-height:1;background:none;border:0;color:var(--accent);opacity:.45;cursor:pointer;padding:8px;vertical-align:middle;transition:opacity .2s,transform .2s}
+.tiny:hover,.tiny:focus-visible{opacity:1;transform:scale(1.4)}
+.secret{font:700 clamp(2.4rem,10vw,3.6rem)/1.1 var(--script);color:var(--accent);margin:10px 0 0}
+.secret.show{animation:pop .5s ease-out}
+@keyframes pop{from{transform:scale(.6);opacity:0}to{transform:scale(1);opacity:1}}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{transition:none!important}#sun,.secret.show{animation:none}}
 </style>
 </head>
 <body>
 <main>
 
-<header class="hero">
-  <div>
-    <h1>Hi, Ma’am.</h1>
-    <p class="lead">This little corner of the internet is only for you. There’s nothing to do here except rest, and maybe smile once or twice.</p>
-    <a class="btn" href="#breathe" style="display:inline-block;text-decoration:none;margin-top:6px">Start with one slow breath</a>
-  </div>
-  <svg viewBox="0 0 150 150" role="img" aria-label="A hand-drawn sun">
-    <circle cx="75" cy="75" r="30" fill="#f6c97e" stroke="#2e2a66" stroke-width="3"/>
-    <path d="M62 68l14-7M65 80l18-8M72 90l12-5" stroke="#e8a94f" stroke-width="2.4" stroke-linecap="round" fill="none"/>
-    <path d="M75 22v-12M112 36l9-9M128 75h14M112 114l9 9M75 128v12M38 114l-9 9M22 75H8M38 36l-9-9" stroke="#2e2a66" stroke-width="3.2" stroke-linecap="round" fill="none"/>
+<header>
+  <svg class="scene" viewBox="0 0 680 250" aria-hidden="true">
+    <g id="sun">
+      <circle cx="340" cy="168" r="108" fill="#ffd27a" opacity=".3"/>
+      <circle cx="340" cy="168" r="72" fill="#ffd27a"/>
+      <circle cx="340" cy="168" r="72" fill="none" stroke="#fff" stroke-width="3" opacity=".6"/>
+    </g>
+    <g fill="#fff" opacity=".9"><ellipse cx="120" cy="70" rx="46" ry="16"/><ellipse cx="148" cy="58" rx="30" ry="14"/><ellipse cx="560" cy="48" rx="52" ry="16"/><ellipse cx="538" cy="38" rx="28" ry="12"/><ellipse cx="470" cy="108" rx="34" ry="11"/></g>
+    <path d="M0 250V196C110 160 230 186 340 190C460 194 560 150 680 192V250Z" fill="#f2a2b7"/>
+    <path d="M0 250V220C120 196 250 214 360 216C470 218 580 198 680 214V250Z" fill="#e08fb0"/>
   </svg>
+  <h1>Hi, Ma’am.</h1>
+  <p class="lead">This little corner of the internet is only for you. There’s nothing to do here except rest, and maybe smile once or twice.</p>
+  <a class="btn" href="#breathe">Start with one slow breath</a>
 </header>
 <!-- Save your drawing as day2.png next to this file and it shows up here. If the file is missing, this picture just hides. -->
 <img class="day2" src="day2.png" alt="A hand-drawn picture of Mehreen resting with a warm mug, a cooling patch and a sleepy white cat" onerror="this.remove()">
@@ -101,8 +102,8 @@ footer p{color:var(--soft);font-size:.95rem}
 <section id="breathe">
   <h2>Breathe for a minute</h2>
   <p class="sub">Follow the circle. In through your nose, a little hold, then out slowly.</p>
-  <div class="box hatch-l orb-wrap">
-    <div class="orb hatch-p" id="orb"><span id="orbText">ready</span></div>
+  <div class="card orb-wrap">
+    <div class="orb" id="orb"><span id="orbText">ready</span></div>
     <p class="cue" id="cue" aria-live="polite">Tap start when you’re comfy.</p>
     <button class="btn" id="breathBtn" type="button">Start breathing</button>
   </div>
@@ -111,7 +112,7 @@ footer p{color:var(--soft);font-size:.95rem}
 <section>
   <h2>Today’s tiny to-do list</h2>
   <p class="sub">Just these. Tick them off whenever you feel like it.</p>
-  <div class="box hatch-y">
+  <div class="card">
     <ul class="checks" id="checks">
       <li><label><input type="checkbox"><span>Keep a water bottle within arm’s reach and sip from it</span></label></li>
       <li><label><input type="checkbox"><span>Change into something clean and soft to wear</span></label></li>
@@ -127,7 +128,6 @@ footer p{color:var(--soft);font-size:.95rem}
   <h2>Open when…</h2>
   <p class="sub">Little notes, saved for the moments you might need them.</p>
   <div class="envs">
-    <!-- EDIT: change any of these notes to your own words -->
     <details><summary>…you feel lonely</summary><p>You’re not as alone as it feels right now. Someone is thinking about you at this very moment, and this page is proof of it.</p></details>
     <details><summary>…you’re tired of being strong</summary><p>You don’t have to be strong every single minute. It’s okay to lie down, cry a little, or do absolutely nothing. Soft days are allowed.</p></details>
     <details><summary>…you want to smile</summary><p>Think of the last time you laughed so hard your stomach hurt. That version of you is still in there, and she’s coming back soon.</p></details>
@@ -137,14 +137,14 @@ footer p{color:var(--soft);font-size:.95rem}
 
 <section>
   <h2>A note from me</h2>
-  <p class="sub">Written just for you, on day 4.</p>
-  <!-- EDIT: write your own words here -->
-  <div class="box letter">
-    <p>Dear love,</p>
-    <p>Hoping that you got better today, today is the 4th day. Take rest properly and stay hydrated, don’t do any excessive or heavy works on your own these days. Be careful for a few days.</p>
-    <p>I don’t know if you’ll ever forgive me or talk to me after what I said today, but I will keep this page alive with the love for you I have. I will keep updating this, let you know about me and hoping for the best for you. You need to know that, I love you, I care for you and I hope the best for you. I don’t want your smile to fade away like mine. Keep smiling and laughing always, only that’ll give me peace wherever I am.</p>
-    <p>I will love you more everyday and every moment. Know that too, I failed, to keep you, to value you, to care for you at time. I want to cleanse my mistakes idk if it’s possible or not. Take rest ma’am, I’ll be always here at your lowest.</p>
-    <p>And I’ll update this website for you everyday with some new activities and letters, you can read it whenever you feel low. I remember once you asked if I write diary or not, I think I’ll say this one is my diary, open to you. Take care.</p>
+  <p class="sub">Written just for you, on day 5.</p>
+  <div class="paper">
+    <p>Dear Love,</p>
+    <p>Hope you are getting well slowly. I stay sad knowing that you are sick, your sickness dulls my mood. I want you to be happy and fit always.</p>
+    <p>Yesterday I felt like a criminal when you ran into embarrassment for my call. I stay tensed whenever I’m not in touch with you, that’s why I keep calling you and disturbing you. Gotokalker kotha bhebei ami ajke tomake KSELC er karor shamne call korinai, nahole onekbar call kora hoye jeto while you were there. I enjoyed your singing from far away.</p>
+    <p>I just love being with you, when you talked to me today I felt too light, but whenever I see that my appearance fades away your smile, it makes me want to disappear. I really feel too low, about everything.</p>
+    <p>Ajke ekta bike mere dise amake xD. I was almost dead, paayer upor uthay diye break korse. Koira abar amarei galagali koira gesega. Jodio fault amar e chilo majh rastay haatte haatte tomake call kortesilam kheyal korinai, but yeah boro accident hoynai, just haatte ektu betha kore paa.</p>
+    <p>I think enough yapping for today. I pray for your wellbeing everyday. You’re my first thought after waking up and last thought before sleeping. Taratari shustho hoye jaoooo.</p>
     <p class="sign">Hasin</p>
     <p class="ps">P.S. One of the hearts on this page is hiding something. Can you find it?</p>
   </div>
@@ -153,25 +153,25 @@ footer p{color:var(--soft);font-size:.95rem}
 <section>
   <h2>Getting better, day by day</h2>
   <p class="sub">Tap a day once you’ve made it through. Today gets a ring.</p>
-  <div class="box hatch-m">
+  <div class="card">
     <div class="days" id="days">
       <button class="day" type="button" aria-pressed="false" data-day="1" aria-label="Day 1">1</button>
       <button class="day" type="button" aria-pressed="false" data-day="2" aria-label="Day 2">2</button>
       <button class="day" type="button" aria-pressed="false" data-day="3" aria-label="Day 3">3</button>
-      <button class="day today" type="button" aria-pressed="false" data-day="4" aria-label="Day 4, today">4</button>
-      <button class="day" type="button" aria-pressed="false" data-day="5" aria-label="Day 5">5</button>
+      <button class="day" type="button" aria-pressed="false" data-day="4" aria-label="Day 4">4</button>
+      <button class="day today" type="button" aria-pressed="false" data-day="5" aria-label="Day 5, today">5</button>
       <button class="day" type="button" aria-pressed="false" data-day="6" aria-label="Day 6">6</button>
       <button class="day" type="button" aria-pressed="false" data-day="7" aria-label="Day 7">7</button>
     </div>
-    <p class="dayline hand" style="font-size:1.6rem" id="dayline"></p>
+    <p class="dayline" id="dayline"></p>
   </div>
 </section>
 
 <footer>
-  <svg width="120" height="30" viewBox="0 0 120 30" aria-hidden="true"><path d="M4 18C30 6 60 26 116 10" stroke="#2e2a66" stroke-width="3" fill="none" stroke-linecap="round"/></svg><button class="tiny" id="tiny" type="button" aria-label="A tiny heart">♥</button>
+  <svg width="120" height="30" viewBox="0 0 120 30" aria-hidden="true"><path d="M4 18C30 6 60 26 116 10" stroke="#e8657a" stroke-width="3" fill="none" stroke-linecap="round"/></svg><button class="tiny" id="tiny" type="button" aria-label="A tiny heart">♥</button>
   <p class="secret" id="secret" aria-live="polite"></p>
-  <h2 style="transform:none;margin-top:6px">Rest first. Everything else can wait.</h2>
-  <p style="margin-top:14px">Made with love for Mehreen. If you start to feel worse, please tell someone and see a doctor.</p>
+  <h2>Rest first. Everything else can wait.</h2>
+  <p>Made with love for Mehreen. If you start to feel worse, please tell someone and see a doctor.</p>
 </footer>
 
 </main>
@@ -197,20 +197,21 @@ footer p{color:var(--soft);font-size:.95rem}
 
   // Checklist
   var boxes=[].slice.call(document.querySelectorAll('#checks input')),tally=document.getElementById('tally');
-  var saved=load('mehreen-checks-day4b',[]);
+  var saved=load('mehreen-checks-day5',[]);
   var msgs=['Take your time.','A good start.','Nice, keep going gently.','Almost there, you star.','So close, well done.','All done. You looked after yourself today ♥'];
   function count(){var n=boxes.filter(function(b){return b.checked}).length;tally.textContent=n+' of '+boxes.length+'. '+msgs[n];}
-  boxes.forEach(function(b,k){b.checked=!!saved[k];b.addEventListener('change',function(){save('mehreen-checks-day4b',boxes.map(function(x){return x.checked}));count()})});
+  boxes.forEach(function(b,k){b.checked=!!saved[k];b.addEventListener('change',function(){save('mehreen-checks-day5',boxes.map(function(x){return x.checked}));count()})});
   count();
 
   // Days
   var days=[].slice.call(document.querySelectorAll('.day')),line=document.getElementById('dayline');
-  var done=load('mehreen-days',['1','2','3']);
+  var done=load('mehreen-days',['1','2','3','4']);
 
   // Hidden heart
   var tiny=document.getElementById('tiny'),secret=document.getElementById('secret'),words='I love you a lot ♥';
   if(load('mehreen-found',false)){secret.textContent=words}
   tiny.addEventListener('click',function(){secret.textContent=words;secret.classList.remove('show');void secret.offsetWidth;secret.classList.add('show');save('mehreen-found',true)});
+
   var dmsg=['Tap a day when you’ve made it through.','One day down. You’re doing it.','Two days down, getting stronger.','Three days. Look at you go.','Four days of being brave.','Five days. Almost at the finish.','Six days. Nearly there.','A whole week. So proud of you ♥'];
   function paint(){days.forEach(function(d){d.setAttribute('aria-pressed',done.indexOf(d.dataset.day)>-1)});line.textContent=dmsg[done.length];}
   days.forEach(function(d){d.addEventListener('click',function(){var v=d.dataset.day,at=done.indexOf(v);if(at>-1)done.splice(at,1);else done.push(v);save('mehreen-days',done);paint()})});
