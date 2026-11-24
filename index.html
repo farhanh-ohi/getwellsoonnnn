@@ -114,13 +114,14 @@ footer p{color:var(--soft);font-size:.95rem;margin-top:14px}
   <p class="sub">Just these. Tick them off whenever you feel like it.</p>
   <div class="card">
     <ul class="checks" id="checks">
-      <li><label><input type="checkbox"><span>Keep a water bottle within arm’s reach and sip from it</span></label></li>
-      <li><label><input type="checkbox"><span>Change into something clean and soft to wear</span></label></li>
-      <li><label><input type="checkbox"><span>Doodle or write anything in a notebook, no rules</span></label></li>
-      <li><label><input type="checkbox"><span>Message someone who makes you feel safe, only if you want to</span></label></li>
+      <li><label><input type="checkbox"><span>Drink water and eat on time, no skipping today</span></label></li>
       <li><label><input type="checkbox"><span>Take your medicine on time if you’ve been told to</span></label></li>
+      <li><label><input type="checkbox"><span>Gently sway or dance (sitting is fine!) to one song you love</span></label></li>
+      <li><label><input type="checkbox"><span>Give your pillow or blanket a silly nickname</span></label></li>
+      <li><label><input type="checkbox"><span>Doodle your dream snack, bad drawing encouraged</span></label></li>
+      <li><label><input type="checkbox"><span>Try one tiny puzzle or game, like a word search or 20 questions with a friend</span></label></li>
     </ul>
-    <p class="tally" id="tally">0 of 5. Take your time.</p>
+    <p class="tally" id="tally">0 of 6. Take your time.</p>
   </div>
 </section>
 
@@ -137,15 +138,14 @@ footer p{color:var(--soft);font-size:.95rem;margin-top:14px}
 
 <section>
   <h2>A note from me</h2>
-  <p class="sub">Written just for you, on day 5.</p>
+  <p class="sub">Written just for you, on day 6.</p>
   <div class="paper">
-    <p>Dear Love,</p>
-    <p>Hope you are getting well slowly. I stay sad knowing that you are sick, your sickness dulls my mood. I want you to be happy and fit always.</p>
-    <p>Yesterday I felt like a criminal when you ran into embarrassment for my call. I stay tensed whenever I’m not in touch with you, that’s why I keep calling you and disturbing you. Gotokalker kotha bhebei ami ajke tomake KSELC er karor shamne call korinai, nahole onekbar call kora hoye jeto while you were there. I enjoyed your singing from far away.</p>
-    <p>I just love being with you, when you talked to me today I felt too light, but whenever I see that my appearance fades away your smile, it makes me want to disappear. I really feel too low, about everything.</p>
-    <p>Ajke ekta bike mere dise amake xD. I was almost dead, paayer upor uthay diye break korse. Koira abar amarei galagali koira gesega. Jodio fault amar e chilo majh rastay haatte haatte tomake call kortesilam kheyal korinai, but yeah boro accident hoynai, just haatte ektu betha kore paa.</p>
-    <p>I think enough yapping for today. I pray for your wellbeing everyday. You’re my first thought after waking up and last thought before sleeping. Taratari shustho hoye jaoooo.</p>
-    <p class="sign">Hasin</p>
+    <p>Dear love,</p>
+    <p>I hope that you’re better than before now, the cramps stopped but don’t stop caring for yourself. Take full care of yourself for next few days until you get well properly. Drink water, eat food timely, don’t skip these. Don’t do any heavy works on your own for a few days. You’ll be totally fine soon. I pray for you.</p>
+    <p>I miss those days when we used to spend time together in college. Going to canteen together, buying food, then eating together while sharing food, chitchat in the field, i miss everything. Those days were the best days I’ve lived.</p>
+    <p>Now things are a lot different, I don’t even feel like going to college anymore, walking like a dead corpse there. Oh how much I love and miss us. But alas! I survive everyday barely now, I kind of feel something inside me, that feeling is too dense I want to surpass, I’m fighting these all alone and feel like I’m losing to it. Are these the dark side of mine returning? I have no idea. I don’t want to get there again. Uh.</p>
+    <p>But yeah hoping that you’ll get well soon, a little reminder that you’re someone too precious in my life. Enough yapping for today. Take care of yourself.</p>
+    <p class="sign">Yours<br>~Hasin</p>
     <p class="ps">P.S. One of the hearts on this page is hiding something. Can you find it?</p>
   </div>
 </section>
@@ -159,8 +159,8 @@ footer p{color:var(--soft);font-size:.95rem;margin-top:14px}
       <button class="day" type="button" aria-pressed="false" data-day="2" aria-label="Day 2">2</button>
       <button class="day" type="button" aria-pressed="false" data-day="3" aria-label="Day 3">3</button>
       <button class="day" type="button" aria-pressed="false" data-day="4" aria-label="Day 4">4</button>
-      <button class="day today" type="button" aria-pressed="false" data-day="5" aria-label="Day 5, today">5</button>
-      <button class="day" type="button" aria-pressed="false" data-day="6" aria-label="Day 6">6</button>
+      <button class="day" type="button" aria-pressed="false" data-day="5" aria-label="Day 5">5</button>
+      <button class="day today" type="button" aria-pressed="false" data-day="6" aria-label="Day 6, today">6</button>
       <button class="day" type="button" aria-pressed="false" data-day="7" aria-label="Day 7">7</button>
     </div>
     <p class="dayline" id="dayline"></p>
@@ -197,15 +197,15 @@ footer p{color:var(--soft);font-size:.95rem;margin-top:14px}
 
   // Checklist
   var boxes=[].slice.call(document.querySelectorAll('#checks input')),tally=document.getElementById('tally');
-  var saved=load('mehreen-checks-day5',[]);
-  var msgs=['Take your time.','A good start.','Nice, keep going gently.','Almost there, you star.','So close, well done.','All done. You looked after yourself today ♥'];
+  var saved=load('mehreen-checks-day6',[]);
+  var msgs=['Take your time.','A good start.','Nice, keep going gently.','Halfway there, you star.','Almost there.','So close, well done.','All done. You looked after yourself today ♥'];
   function count(){var n=boxes.filter(function(b){return b.checked}).length;tally.textContent=n+' of '+boxes.length+'. '+msgs[n];}
-  boxes.forEach(function(b,k){b.checked=!!saved[k];b.addEventListener('change',function(){save('mehreen-checks-day5',boxes.map(function(x){return x.checked}));count()})});
+  boxes.forEach(function(b,k){b.checked=!!saved[k];b.addEventListener('change',function(){save('mehreen-checks-day6',boxes.map(function(x){return x.checked}));count()})});
   count();
 
   // Days
   var days=[].slice.call(document.querySelectorAll('.day')),line=document.getElementById('dayline');
-  var done=load('mehreen-days',['1','2','3','4']);
+  var done=load('mehreen-days',['1','2','3','4','5']);
 
   // Hidden heart
   var tiny=document.getElementById('tiny'),secret=document.getElementById('secret'),words='I love you a lot ♥';
