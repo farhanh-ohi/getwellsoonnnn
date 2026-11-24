@@ -38,13 +38,21 @@ section{margin-top:72px}
 .orb span{font:700 1.9rem var(--script);padding:0 12px}
 .cue{min-height:1.8em;font-weight:600;margin-bottom:14px}
 
-.checks{list-style:none;margin:0;padding:0;display:grid;gap:14px}
-.checks label{display:flex;align-items:center;gap:14px;cursor:pointer;font-weight:600}
-.checks input{appearance:none;-webkit-appearance:none;width:27px;height:27px;border-radius:50%;border:2.5px solid var(--accent);background:#fff;flex:none;display:grid;place-items:center;cursor:pointer;margin:0}
-.checks input:checked{background:var(--accent)}
-.checks input:checked::after{content:"✓";color:#fff;font-weight:700;font-size:15px;line-height:1}
-.checks input:checked+span{opacity:.55;text-decoration:line-through}
-.tally{margin:20px 0 0;font:700 1.7rem var(--script)}
+.play+.play{margin-top:18px}
+.play h3{font:700 1.7rem var(--script);margin:0 0 14px}
+.cards{display:flex;flex-wrap:wrap;gap:12px}
+.pick{width:60px;height:84px;border-radius:16px;border:2px solid var(--accent);background:linear-gradient(160deg,#fff,#ffd6e0);color:var(--accent);font:700 2rem var(--script);cursor:pointer;transition:transform .15s,background .2s}
+.pick:hover{transform:translateY(-4px) rotate(-3deg)}
+.pick.flipped{background:linear-gradient(135deg,#ffe29a,var(--gold));color:var(--ink);border-color:#f0b84c}
+.playtext{min-height:2.8em;font-weight:600;margin:16px 0 0}
+.bubbles{display:grid;grid-template-columns:repeat(auto-fill,minmax(54px,1fr));gap:12px}
+.bubble{width:54px;height:54px;border-radius:50%;border:1px solid #fff;background:radial-gradient(circle at 32% 28%,#fff,#cfe6ff 45%,#f3c8ee);box-shadow:inset -4px -6px 12px rgba(180,150,230,.35),0 4px 10px rgba(120,80,150,.15);cursor:pointer;transition:transform .2s,opacity .2s}
+.bubble:hover{transform:scale(1.08)}
+.bubble.popped{transform:scale(0);opacity:0;pointer-events:none}
+.moods{display:flex;flex-wrap:wrap;gap:10px}
+.chip{font:700 .98rem 'Quicksand',system-ui,sans-serif;color:var(--ink);background:#fff;border:2px solid var(--accent);border-radius:999px;padding:8px 18px;cursor:pointer;transition:background .15s}
+.chip[aria-pressed="true"]{background:var(--accent);color:#fff}
+#refill{margin-top:4px}
 
 .envs{display:grid;gap:14px}
 details{background:var(--card);border:1px solid rgba(255,255,255,.85);border-radius:22px;box-shadow:0 8px 22px rgba(120,80,150,.13)}
@@ -110,19 +118,30 @@ footer p{color:var(--soft);font-size:.95rem;margin-top:14px}
 </section>
 
 <section>
-  <h2>Today’s tiny to-do list</h2>
-  <p class="sub">Just these. Tick them off whenever you feel like it.</p>
-  <div class="card">
-    <ul class="checks" id="checks">
-      <li><label><input type="checkbox"><span>Drink water and eat on time, no skipping today</span></label></li>
-      <li><label><input type="checkbox"><span>Take your medicine on time if you’ve been told to</span></label></li>
-      <li><label><input type="checkbox"><span>Gently sway or dance (sitting is fine!) to one song you love</span></label></li>
-      <li><label><input type="checkbox"><span>Give your pillow or blanket a silly nickname</span></label></li>
-      <li><label><input type="checkbox"><span>Doodle your dream snack, bad drawing encouraged</span></label></li>
-      <li><label><input type="checkbox"><span>Try one tiny puzzle or game, like a word search or 20 questions with a friend</span></label></li>
-    </ul>
-    <p class="tally" id="tally">0 of 6. Take your time.</p>
+  <h2>Little things to play with</h2>
+  <p class="sub">No rules, no score that matters. Tap around whenever you feel like it.</p>
+  <div class="card play">
+    <h3>Pick a card</h3>
+    <div class="cards" id="cards"></div>
+    <p class="playtext" id="cardtext" aria-live="polite">Choose one and see what it says.</p>
   </div>
+  <div class="card play">
+    <h3>Pop the bubbles</h3>
+    <div class="bubbles" id="bubbles"></div>
+    <p class="playtext" id="popcount" aria-live="polite">0 popped</p>
+    <button class="chip" id="refill" type="button">Blow new bubbles</button>
+  </div>
+  <div class="card play">
+    <h3>What’s the weather inside today?</h3>
+    <div class="moods" id="moods">
+      <button class="chip" type="button" aria-pressed="false" data-m="0">☀️ Sunny</button>
+      <button class="chip" type="button" aria-pressed="false" data-m="1">⛅ Okay</button>
+      <button class="chip" type="button" aria-pressed="false" data-m="2">🌧️ Rainy</button>
+      <button class="chip" type="button" aria-pressed="false" data-m="3">⛈️ Stormy</button>
+    </div>
+    <p class="playtext" id="moodtext" aria-live="polite">Tap the one that fits.</p>
+  </div>
+  <p class="sub" style="margin-top:18px">Meanwhile: sip some water, eat on time, and take your medicine if you’ve been told to.</p>
 </section>
 
 <section>
@@ -195,13 +214,24 @@ footer p{color:var(--soft);font-size:.95rem;margin-top:14px}
     else{running=true;i=0;btn.textContent='Stop';step();}
   });
 
-  // Checklist
-  var boxes=[].slice.call(document.querySelectorAll('#checks input')),tally=document.getElementById('tally');
-  var saved=load('mehreen-checks-day6',[]);
-  var msgs=['Take your time.','A good start.','Nice, keep going gently.','Halfway there, you star.','Almost there.','So close, well done.','All done. You looked after yourself today ♥'];
-  function count(){var n=boxes.filter(function(b){return b.checked}).length;tally.textContent=n+' of '+boxes.length+'. '+msgs[n];}
-  boxes.forEach(function(b,k){b.checked=!!saved[k];b.addEventListener('change',function(){save('mehreen-checks-day6',boxes.map(function(x){return x.checked}));count()})});
-  count();
+  // Play
+  var cardMsgs=['You’re allowed to rest without earning it.','A group of flamingos is called a flamboyance. Be a little flamboyant today.','Someone smiled just now, thinking about you.','Your laugh is one of the best sounds ever, and it will be back soon.','You’re doing better than you think.','Pretend you’re a cat for ten minutes: stretch, nap, ignore everything.','Why did the blanket get promoted? It was always covering for everyone.','Your only job today is to be gentle with yourself.','You’re someone too precious to be rushed.','Tiny goal: be kind to yourself for one whole minute.'];
+  var cardsEl=document.getElementById('cards'),cardText=document.getElementById('cardtext'),lastCard=-1;
+  for(var c=0;c<5;c++){(function(){var b=document.createElement('button');b.className='pick';b.type='button';b.textContent='?';b.setAttribute('aria-label','Card '+(c+1));
+    b.addEventListener('click',function(){var r;do{r=Math.floor(Math.random()*cardMsgs.length)}while(r===lastCard);lastCard=r;
+      [].forEach.call(cardsEl.children,function(x){x.className='pick';x.textContent='?'});b.className='pick flipped';b.textContent='♥';cardText.textContent=cardMsgs[r]});
+    cardsEl.appendChild(b)})()}
+
+  var bub=document.getElementById('bubbles'),popCount=document.getElementById('popcount'),popped=0,total=12;
+  function fill(){bub.innerHTML='';popped=0;popCount.textContent='0 popped';
+    for(var k=0;k<total;k++){var b=document.createElement('button');b.className='bubble';b.type='button';b.setAttribute('aria-label','Bubble');
+      b.addEventListener('click',function(e){var t=e.currentTarget;if(t.classList.contains('popped'))return;t.classList.add('popped');popped++;
+        popCount.textContent=popped<total?popped+' popped':'All popped. Now let out one slow breath ♥'});bub.appendChild(b)}}
+  document.getElementById('refill').addEventListener('click',fill);fill();
+
+  var moodMsgs=['Wonderful. Soak it up slowly and don’t overdo it.','Okay is a good place to be on the way to better.','Rainy days pass. Wrap up warm and let the rain do its thing.','That sounds really hard. You don’t have to handle it alone. Reach out to someone you trust today.'];
+  var moodBtns=[].slice.call(document.querySelectorAll('#moods .chip')),moodText=document.getElementById('moodtext');
+  moodBtns.forEach(function(b){b.addEventListener('click',function(){moodBtns.forEach(function(x){x.setAttribute('aria-pressed','false')});b.setAttribute('aria-pressed','true');moodText.textContent=moodMsgs[b.dataset.m]})});
 
   // Days
   var days=[].slice.call(document.querySelectorAll('.day')),line=document.getElementById('dayline');
